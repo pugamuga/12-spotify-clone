@@ -23,4 +23,7 @@
   .tr-700 {
     @apply transition-all duration-700;
   }
+  .leftBarIcon{
+    @apply text-[#808080] w-6 h-6 cursor-pointer
+  }
 }
