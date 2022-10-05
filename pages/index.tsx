@@ -1,15 +1,14 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import Image from "next/image";
-import DarkModeToggle from "../components/DarkModeToggle";
-import SvgIcon from "../components/SvgIcon";
+import Dashboard from "../components/Dashboard";
 
 const Home: NextPage = (): JSX.Element => {
   return (
     <div>
-       <Head>
+      <Head>
         <title>Spotify</title>
       </Head>
+      <Dashboard />
     </div>
   );
 };
