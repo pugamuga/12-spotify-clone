@@ -13,5 +13,9 @@ module.exports = {
       lobster: ["Lobster", "cursive"],
     },
   },
-  plugins: [],
+  plugins: [
+    require("tailwind-scrollbar"),
+    require("tailwind-scrollbar-hide"),
+    require("@tailwindcss/forms"),
+  ],
 };

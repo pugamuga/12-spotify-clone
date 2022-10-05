@@ -13,7 +13,7 @@ export default function LeftBar(): JSX.Element {
         width={56}
         objectFit="contain"
       />
-      <div>
+      <div className="flex flex-col space-y-8">
         <HomeIcon className="leftBarIcon text-white opacity-[85%]"/>
         <RiCompassFill className="leftBarIcon"/>
         <FaMicrophoneAlt className="leftBarIcon"/>
