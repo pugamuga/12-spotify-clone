@@ -1,5 +1,6 @@
 import { useRecoilState } from "recoil";
 import { searchTop } from "../recoilState/state";
+import {MdOutlineShortText} from "react-icons/md"
 
 export default function Search(): JSX.Element {
   const [search, setSearch] = useRecoilState(searchTop);
@@ -15,11 +16,15 @@ export default function Search(): JSX.Element {
         className="bg-[#1a1a1a] text-white border-none lg:w-full focus:ring-0 outline-none placeholder-[#fafafa] text-xs"
         placeholder="Search..."
       />
-      <div className="flex items-center">
+      <div className="flex items-center divide-x-2 divide-dotted divide-[#333] ml-auto ">
         <div className=" flex space-x-2 pr-5">
           <button className="tag">Minimal</button>
           <button className="tag">House</button>
           <button className="tag">Minimal</button>
+        </div>
+        <div className=" flex items-center space-x-2 text-[#cecece] pl-4">
+          <MdOutlineShortText className=" text-2xl animate-pulse"/>
+          <span className=" font-medium text-sm">Filters</span>
         </div>
       </div>
     </div>
