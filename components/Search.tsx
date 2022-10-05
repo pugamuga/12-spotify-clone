@@ -13,7 +13,7 @@ export default function Search(): JSX.Element {
         onChange={(e) => {
           setSearch(e.target.value);
         }}
-        className="bg-[#1a1a1a] text-white border-none lg:w-full focus:ring-0 outline-none placeholder-[#fafafa] text-xs"
+        className="bg-[#1a1a1a] text-white border-none lg:w-full focus:ring-0 outline-none placeholder-[#fafafa] text-sm"
         placeholder="Search..."
       />
       <div className="flex items-center divide-x-2 divide-dotted divide-[#333] ml-auto ">
