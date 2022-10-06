@@ -33,4 +33,7 @@
   .tag{
     @apply py-2 px-3 rounded-xl text-xs text-[#cecece] border-2  font-bold border-[#484848] bg-[#282828]
   }
+  .signInBtn{
+    @apply text-white py-4 px-6 rounded-full bg-[#1db954] tr-300 border border-transparent uppercase font-bold text-xs md:text-base tracking-wider hover:scale-105 hover:bg-[#0db146]
+  }
 }
