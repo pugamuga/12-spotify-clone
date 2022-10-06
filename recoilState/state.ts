@@ -16,7 +16,7 @@ export const playState = atom<boolean>({
   key: "playState",
   default: false,
 });
-export const playingTrackState = atom<string>({
+export const playingTrackState = atom<any>({
   key: "playingTrackState",
   default: "",
 });

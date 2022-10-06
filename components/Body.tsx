@@ -9,9 +9,10 @@ import Poster from "./Poster";
 
 interface IProps {
   spotifyApi: SpotifyWebApi;
+  chooseTrack: any;
 }
 
-export default function Body({ spotifyApi }: IProps): JSX.Element {
+export default function Body({ spotifyApi, chooseTrack }: IProps): JSX.Element {
   const [searchResult, setSearchResult] = useRecoilState(searchState);
   const [newRelises, setNewRelises] = useRecoilState(newRelisesState);
   const [search, setSearch] = useRecoilState(searchTop);
@@ -76,10 +77,29 @@ export default function Body({ spotifyApi }: IProps): JSX.Element {
         {searchResult.length === 0
           ? newRelises
               .slice(0, 4)
-              .map((track: any) => <Poster key={track.id} track={track} />)
+              .map((track: any) => (
+                <Poster
+                  key={track.id}
+                  track={track}
+                  chooseTrack={chooseTrack}
+                />
+              ))
           : newRelises
               .slice(0, 4)
-              .map((track: any) => <Poster key={track.id} track={track} />)}
+              .map((track: any) => (
+                <Poster
+                  key={track.id}
+                  track={track}
+                  chooseTrack={chooseTrack}
+                />
+              ))}
+      </div>
+
+      <div className=" flex gap-x-8 absolute min-w-full md:relative ml-6 ">
+        <div className=" hidden xl:inline max-w-[270px]">
+          <p className=" text-white font-bold mb-3">Genres</p>
+          <div></div>
+        </div>
       </div>
     </section>
   );
