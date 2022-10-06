@@ -17,6 +17,6 @@ export const playState = atom<boolean>({
   default: false,
 });
 export const playingTrackState = atom<string>({
-  key: "newRelisesState",
+  key: "playingTrackState",
   default: "",
 });

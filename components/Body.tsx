@@ -67,18 +67,19 @@ export default function Body({ spotifyApi }: IProps): JSX.Element {
         })
       );
     });
-  }, [ accessToken]);
-
+  }, [accessToken]);
 
   return (
     <section className="ml-24 bg-black py-4 space-y-8 md:max-w-6xl flex-grow md:mr-3">
       <Search />
       <div className="grid overflow-y-scroll scrollbar-hide h-96 py-4 grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-4 gap-y-8 p-4">
-        {searchResult.length === 0? newRelises.slice(0,4).map((item:any)=>{
-          return <Poster key={item.id} track={item} />
-        }):searchResult.slice(0,4).map((item:any)=>{
-          return <Poster key={item.id}/>
-        })}
+        {searchResult.length === 0
+          ? newRelises
+              .slice(0, 4)
+              .map((track: any) => <Poster key={track.id} track={track} />)
+          : newRelises
+              .slice(0, 4)
+              .map((track: any) => <Poster key={track.id} track={track} />)}
       </div>
     </section>
   );
