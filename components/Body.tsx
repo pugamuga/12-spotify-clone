@@ -119,7 +119,7 @@ export default function Body({ spotifyApi, chooseTrack }: IProps): JSX.Element {
           <div
             className="space-y-3 border-2 rounded-2xl border-[#262626] p-3 bg-[#0d0d0d] overflow-y-scroll h-[1000px] 
             md:h-96 scrollbar-thin scrollbar-thumb-slate-700
-        scrollbar-thumb-rounded w-[830px] hover:scrollbar-thumb-slate-500 tr-300"
+        scrollbar-thumb-rounded w-[830px] hover:scrollbar-thumb-slate-500 tr-300 "
           >
             {searchResult.length === 0
               ? newRelises

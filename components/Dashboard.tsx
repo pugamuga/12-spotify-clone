@@ -17,7 +17,7 @@ export default function Dashboard(): JSX.Element {
   };
 
   return (
-    <main>
+    <main className=" flex min-h-screen min-w-max bg-black lg:pb-24">
       <LeftBar />
       <Body spotifyApi={spotifyApi} chooseTrack={chooseTrack} />
       <RightBar />

@@ -29,7 +29,7 @@ export default function Poster({ track, chooseTrack }: any): JSX.Element {
           {track.uri === playingTrack.uri && play ? (
             <BsFillPauseFill className="w-6 h-6" />
           ) : (
-            <BsFillPlayFill className="w-6 h-6" />
+            <BsFillPlayFill className="w-6 h-6 ml-[2px]" />
           )}
         </div>
         <div className=" text-[15px]">
