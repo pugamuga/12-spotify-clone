@@ -8,6 +8,7 @@ import { ITrack } from "../typing/typing";
 import Poster from "./Poster";
 import { genres } from "../data";
 import Track from "./Track";
+import warImage from "../public/assets/war.jpg";
 
 interface IProps {
   spotifyApi: SpotifyWebApi;
@@ -143,6 +144,7 @@ export default function Body({ spotifyApi, chooseTrack }: IProps): JSX.Element {
           </div>
         </div>
       </div>
+     
     </section>
   );
 }
