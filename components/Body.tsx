@@ -6,6 +6,7 @@ import Search from "./Search";
 import SpotifyWebApi from "spotify-web-api-node";
 import { ITrack } from "../typing/typing";
 import Poster from "./Poster";
+import { genres } from "../data";
 
 interface IProps {
   spotifyApi: SpotifyWebApi;
@@ -69,7 +70,6 @@ export default function Body({ spotifyApi, chooseTrack }: IProps): JSX.Element {
       );
     });
   }, [accessToken]);
-
   return (
     <section className="ml-24 bg-black py-4 space-y-8 md:max-w-6xl flex-grow md:mr-3">
       <Search />
@@ -98,7 +98,18 @@ export default function Body({ spotifyApi, chooseTrack }: IProps): JSX.Element {
       <div className=" flex gap-x-8 absolute min-w-full md:relative ml-6 ">
         <div className=" hidden xl:inline max-w-[270px]">
           <p className=" text-white font-bold mb-3">Genres</p>
-          <div></div>
+          <div className=" flex gap-x-2 gap-y-2 flex-wrap mb-3">
+            {genres.map((genre: string, index: number) => {
+              return (
+                <div className="genre" key={index}>
+                  {genre}
+                </div>
+              );
+            })}
+          </div>
+          <button className="text-[#CECECE] bg-[#1a1a1a] text-[13px] py-4 px-5 rounded-2xl w-full font-bold bg-opacity-80 hover:bg-opacity-100 tr-300">
+            All genres
+          </button>
         </div>
       </div>
     </section>

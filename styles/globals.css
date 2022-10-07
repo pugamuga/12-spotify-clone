@@ -36,4 +36,7 @@
   .signInBtn{
     @apply text-white py-4 px-6 rounded-full bg-[#1db954] tr-300 border border-transparent uppercase font-bold text-xs md:text-base tracking-wider hover:scale-105 hover:bg-[#0db146]
   }
+  .genre{
+    @apply text-[#CECECE] bg-[#101010] border border-[#484848] rounded-xl py-3 px-4 text-[11px] font-bold cursor-default
+  }
 }
