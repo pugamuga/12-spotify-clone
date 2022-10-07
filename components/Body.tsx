@@ -7,6 +7,7 @@ import SpotifyWebApi from "spotify-web-api-node";
 import { ITrack } from "../typing/typing";
 import Poster from "./Poster";
 import { genres } from "../data";
+import Track from "./Track";
 
 interface IProps {
   spotifyApi: SpotifyWebApi;
@@ -84,7 +85,7 @@ export default function Body({ spotifyApi, chooseTrack }: IProps): JSX.Element {
                   chooseTrack={chooseTrack}
                 />
               ))
-          : newRelises
+          : searchResult
               .slice(0, 4)
               .map((track: any) => (
                 <Poster
@@ -110,6 +111,36 @@ export default function Body({ spotifyApi, chooseTrack }: IProps): JSX.Element {
           <button className="text-[#CECECE] bg-[#1a1a1a] text-[13px] py-4 px-5 rounded-2xl w-full font-bold bg-opacity-80 hover:bg-opacity-100 tr-300">
             All genres
           </button>
+        </div>
+        <div>
+          <p className=" text-white font-bold mb-3">
+            {searchResult.length === 0 ? "New relises" : "Tracks"}
+          </p>
+          <div
+            className="space-y-3 border-2 rounded-2xl border-[#262626] p-3 bg-[#0d0d0d] overflow-y-scroll h-[1000px] 
+            md:h-96 scrollbar-thin scrollbar-thumb-slate-700
+        scrollbar-thumb-rounded w-[830px] hover:scrollbar-thumb-slate-500 tr-300"
+          >
+            {searchResult.length === 0
+              ? newRelises
+                  .slice(4, newRelises.length)
+                  .map((track: any) => (
+                    <Track
+                      key={track.id}
+                      track={track}
+                      chooseTrack={chooseTrack}
+                    />
+                  ))
+              : searchResult
+                  .slice(4, searchResult.length)
+                  .map((track: any) => (
+                    <Track
+                      key={track.id}
+                      track={track}
+                      chooseTrack={chooseTrack}
+                    />
+                  ))}
+          </div>
         </div>
       </div>
     </section>
