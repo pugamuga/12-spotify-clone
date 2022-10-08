@@ -31,10 +31,10 @@ export default function Dropdown(): JSX.Element {
         leaveTo="transform opacity-0 scale-95"
       >
         <Menu.Items
-          className={` absolute right-0 w-56 mt-24 origin-top-right bg-[#1a1a1a] divide-y divide-gray-100
-        rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none`}
+          className={` absolute right-0 w-56 mt-[120px] origin-top-right bg-[#1a1a1a] divide-y divide-gray-100
+        rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none p-1`}
         >
-          <div className="p-1">
+          <div className="p-1 ">
             <Menu.Item>
               {({ active }) => (
                 <button
@@ -47,7 +47,7 @@ export default function Dropdown(): JSX.Element {
                   }}
                 >
                   <ArrowLeftOnRectangleIcon
-                    className=" w-5 h-5 mr-2"
+                    className=" w-6 h-6 mr-2"
                     aria-hidden="true"
                   />
                   Log out
