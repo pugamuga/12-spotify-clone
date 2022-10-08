@@ -3,9 +3,22 @@ import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 import { ImHeadphones } from "react-icons/im";
 import HeartIcon from "../public/assets/heart.png";
 import warImage from "../public/assets/war.jpg";
+import { useState } from "react";
+import { playingTrackState, playState } from "../recoilState/state";
+import { useRecoilState, useRecoilValue } from "recoil";
 
 export default function Track({ track, chooseTrack }: any): JSX.Element {
-  console.log(track);
+  const [hasLiked, setHasLiked] = useState<boolean>(false);
+  const [play, setPlay] = useRecoilState(playState);
+  const [playingTrack, setPlayingTrack] = useRecoilState(playingTrackState);
+
+  const handlePlay = () => {
+    chooseTrack(track);
+    if (track.uri == playingTrack.uri) {
+      setPlay(!play);
+    }
+  };
+
   return (
     <div className=" flex items-center justify-between space-x-20 cursor-default hover:bg-white/10 py-2 px-4 rounded-lg group tr-300">
       <div className=" flex items-center">
@@ -34,10 +47,23 @@ export default function Track({ track, chooseTrack }: any): JSX.Element {
             ) : (
               <AiOutlineHeart className="w-6 h-6 hover:scale-125 tr-300 cursor-pointer mr-4 ml-3" />
             )} */}
-         <div style={{backgroundImage:"url(/assets/heart.png)"}} className={`w-12 h-12 bg-cover bg-left scale-150 mx-2 ${!true&&"heartAnim"}`} />
+          <div
+            onClick={() => {
+              setHasLiked((prev) => !prev);
+            }}
+            style={{ backgroundImage: "url(/assets/heart.png)" }}
+            className={`w-12 h-12 bg-cover 
+         bg-left scale-125 mt-[2px] mr-3  ${
+           hasLiked && "heartAnim"
+         } hover:scale-[150%] tr-300 cursor-pointer`}
+          />
 
-          <div className=" h-12 w-12 border superflex border-[#999] rounded-full bg-[#0d0d0d] -mr-4 -ml-2">
-            {!true ? (
+          <div
+            onClick={handlePlay}
+            className=" h-12 w-12 border superflex border-[#999] rounded-full bg-[#0d0d0d] -mr-4 -ml-2  hover:bg-[#1db954] 
+          hover:border-[#15883e]"
+          >
+            {track.uri === playingTrack?.uri && play ? (
               <BsFillPauseFill className="w-6 h-6 cursor-pointer" />
             ) : (
               <BsFillPlayFill className="w-6 h-6 ml-[2px] cursor-pointer" />
