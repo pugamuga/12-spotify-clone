@@ -17,7 +17,7 @@ export default function Poster({ track, chooseTrack }: any): JSX.Element {
   return (
     <div
       onClick={handlePlay}
-      className=" w-[260px] h-[360px] rounded-[50px] overflow-hidden relative text-white/80 cursor-pointer hover:scale-105 hover:text-white tr-300 group mx-auto "
+      className=" w-[260px] select-none h-[360px] rounded-[50px] overflow-hidden relative text-white/80 cursor-pointer hover:scale-105 hover:text-white tr-300 group mx-auto "
     >
       <img
         src={track.albumUrl}

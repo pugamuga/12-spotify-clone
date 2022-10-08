@@ -7,7 +7,6 @@ import { signOut, useSession } from "next-auth/react";
 export default function Dropdown(): JSX.Element {
   const { data: session } = useSession();
 
-  console.log(session);
   return (
     <Menu as="div" className="w-24 h-12 relative flex items-center">
       <div className=" w-full absolute right-1 group">

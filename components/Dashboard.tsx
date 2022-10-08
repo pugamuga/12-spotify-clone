@@ -4,7 +4,9 @@ import RightBar from "./RightBar";
 import SpotifyWebApi from "spotify-web-api-node";
 import { playingTrackState } from "../recoilState/state";
 import { useRecoilState } from "recoil";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { useSession } from "next-auth/react";
+import Player from "./Player";
 
 const spotifyApi = new SpotifyWebApi({
   clientId: process.env.SPOTIFY_CLIENT_ID,
@@ -12,6 +14,14 @@ const spotifyApi = new SpotifyWebApi({
 
 export default function Dashboard(): JSX.Element {
   const [playingTrack, setPlayingTrack] = useRecoilState(playingTrackState);
+  const { data: session } = useSession();
+  const accessToken = session?.accessToken;
+  const [showPlayer, setShowPlayer] = useState<boolean>(false);
+
+  useEffect(() => {
+    setShowPlayer(true);
+  }, []);
+
   const chooseTrack = (track: any) => {
     setPlayingTrack(track);
   };
@@ -21,6 +31,9 @@ export default function Dashboard(): JSX.Element {
       <LeftBar />
       <Body spotifyApi={spotifyApi} chooseTrack={chooseTrack} />
       <RightBar spotifyApi={spotifyApi} chooseTrack={chooseTrack} />
+      <div className=" fixed bottom-0 left-0 right-0 z-50">
+        <Player />
+      </div>
     </main>
   );
 }
