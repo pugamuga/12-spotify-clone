@@ -2,6 +2,7 @@ import { BsFillGridFill } from "react-icons/bs";
 import { HiOutlineShieldCheck } from "react-icons/hi";
 import { MdOutlineSettings } from "react-icons/md";
 import { BiBell } from "react-icons/bi";
+import Dropdown from "./Dropdown";
 
 export default function RightBar({
   spotiftApi,
@@ -15,9 +16,7 @@ export default function RightBar({
           <MdOutlineSettings className=" text-xl text-[#ccc]" />
           <BiBell className=" text-xl text-[#ccc]" />
         </div>
-        <div>
-          
-        </div>
+        <Dropdown/>
       </div>
     </section>
   );
