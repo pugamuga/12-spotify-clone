@@ -20,7 +20,7 @@ export default function Dashboard(): JSX.Element {
     <main className=" flex min-h-screen min-w-max bg-black lg:pb-24">
       <LeftBar />
       <Body spotifyApi={spotifyApi} chooseTrack={chooseTrack} />
-      <RightBar />
+      <RightBar spotifyApi={spotifyApi} chooseTrack={chooseTrack} />
     </main>
   );
 }
